@@ -24,6 +24,7 @@ const Register = () => {
             return;
         }else{
             createUserWithEmailAndPassword(data.email,data.confirmPassword);
+            setErr('');
         }
         reset();
     };

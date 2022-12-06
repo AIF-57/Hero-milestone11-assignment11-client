@@ -30,8 +30,11 @@ const Login = () => {
                      <p className='text-2xl my-5 font-bold text-slate-900'>USER LOGIN</p>
                     <input placeholder='Email' className='border-2 border-gray-400 w-[60%] h-10 px-2 rounded' {...register("email", { required: true})} />
                     <input placeholder='Password' className='border-2 border-gray-400 w-[60%] h-10 px-2 rounded my-4' {...register("password")} />
-                    {error && <p className='text-red-500 text-[12px] font-bold'>{error.message}</p>}
-                    {error2 && <p className='text-red-500 text-[12px] font-bold'>{error2.message}</p>}
+                    {   
+                        (error && <p className='text-red-500 text-[12px] font-bold'>{error.message}</p>)  
+                        ||
+                        (error2 && <p className='text-red-500 text-[12px] font-bold'>{error2.message}</p>)
+                    }
                     <input type="submit" value='LOGIN' className='w-[60%] h-10 px-2 rounded bg-blue-700 text-white font-bold cursor-pointer' />
                     <span className='my-4 text-sm font-bold'>or</span>
                     <div className="socialLogin w-3/6 rounded-full h-10 bg-white px-2 cursor-pointer border border-gray-300">

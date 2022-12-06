@@ -1,0 +1,6 @@
+.bannerSection{
+    background:linear-gradient(rgba(47, 77, 90, 0.781), rgba(47, 77, 90, 0.466)), url('/src/utilities/addInventory.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
