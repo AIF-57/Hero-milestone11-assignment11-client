@@ -7,6 +7,8 @@ import Register from './Pages/Register/Register';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import UpdateItem from './Pages/UpdateItem/UpdateItem';
+import ManageInventories from './Pages/MangeInventories/ManageInventories';
+import AddNewItem from './Pages/AddInventory/AddInventory';
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}/>
-        <Route path='blogs' element={<Blogs></Blogs>}/>
-        <Route path='inventory/:id' element={<UpdateItem></UpdateItem>}/>
+        <Route path='/blogs' element={<Blogs></Blogs>}/>
+        <Route path='/manage-inventories' element={<ManageInventories></ManageInventories>}/>
+        <Route path='/add-new-item' element={<AddNewItem></AddNewItem>}/>
+        <Route path='/inventory/:id' element={<UpdateItem></UpdateItem>}/>
         <Route path='/login' element={<Login></Login>}/>
         <Route path='/register' element={<Register></Register>}/>
       </Routes>
