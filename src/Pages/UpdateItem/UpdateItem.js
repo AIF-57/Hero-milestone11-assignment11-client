@@ -2,6 +2,7 @@ import { faTruck, faArrowsRotate, faTrashAlt } from '@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useNavigate, useNavigation, useParams } from 'react-router-dom';
+import Footer from '../Shared/Footer/Footer';
 
 const UpdateItem = () => {
     const {id} = useParams();
@@ -81,8 +82,8 @@ const UpdateItem = () => {
     }
 
     return (
-        <div className='my-10 h-screen'>
-            <div className="updateDetail grid grid-cols-5 items-center mx-5 gap-x-5">
+        <div>
+            <div className="my-10 h-screen updateDetail grid grid-cols-5 items-center mx-5 gap-x-5">
                 <div className="itemImg col-span-2">
                     <img src={detail.image} alt="Item_Image" width='400'/>
                 </div>
@@ -116,6 +117,7 @@ const UpdateItem = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

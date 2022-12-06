@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useInventory from '../../hooks/useInventory';
 import Inventory from '../Inventory/Inventory';
+import Footer from '../Shared/Footer/Footer';
 import './ManageInventories.css'
 
 const ManageInventories = () => {
@@ -22,6 +23,7 @@ const ManageInventories = () => {
                                         </Inventory>)
             }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

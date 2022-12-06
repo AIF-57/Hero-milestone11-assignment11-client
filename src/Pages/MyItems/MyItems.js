@@ -2,6 +2,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useInventory from '../../hooks/useInventory';
+import Footer from '../Shared/Footer/Footer';
 import Item from './Item';
 
 
@@ -36,16 +37,19 @@ const MyItems = () => {
     }
     
     return (
-        <div className='py-5'>
-            <p className='font-semibold'>My Items: <span className='text-gray-500 font-extrabold text-lg'>{myItems.length }</span></p>
-            <div className="itemContainer grid grid-cols-3 p-5 gap-x-5">
-                {
-                    myItems.map(myItem => <Item
-                        key={myItem._id}
-                        myItem={myItem}
-                        deleteItem={deleteItem}></Item>)
-                }
+        <div>
+            <div className="itemsDetail min-h-screen">
+                <p className='font-semibold my-8'>My Items: <span className='text-gray-500 font-extrabold text-lg'>{myItems.length }</span></p>
+                <div className="itemContainer grid grid-cols-3 p-5 gap-x-5">
+                    {
+                        myItems.map(myItem => <Item
+                            key={myItem._id}
+                            myItem={myItem}
+                            deleteItem={deleteItem}></Item>)
+                    }
+                </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -10,20 +10,23 @@ import UpdateItem from './Pages/UpdateItem/UpdateItem';
 import ManageInventories from './Pages/MangeInventories/ManageInventories';
 import AddNewItem from './Pages/AddInventory/AddInventory';
 import MyItems from './Pages/MyItems/MyItems';
+import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App max-w-[1280px] mx-auto">
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}/>
         <Route path='/blogs' element={<Blogs></Blogs>}/>
         <Route path='/manage-inventories' element={<ManageInventories></ManageInventories>}/>
         <Route path='/add-new-item' element={<AddNewItem></AddNewItem>}/>
-        <Route path='/inventory/:id' element={<UpdateItem></UpdateItem>}/>
+        <Route path='/inventory/:id' element={<RequireAuth><UpdateItem></UpdateItem></RequireAuth>}/>
         <Route path='my-item' element={<MyItems></MyItems>}/>
         <Route path='/login' element={<Login></Login>}/>
         <Route path='/register' element={<Register></Register>}/>
+        <Route path='*' element={<NotFound></NotFound>}/>
       </Routes>
     </div>
   );

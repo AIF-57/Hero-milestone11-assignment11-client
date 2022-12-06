@@ -27,7 +27,7 @@ const Login = () => {
         signInWithEmailAndPassword(data.email,data.password);
     };
 
-    if(user){
+    if(user3){
         navigate(from,{replace:true})
     }
     return (
