@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import useInventory from '../../hooks/useInventory';
 import Inventory from '../Inventory/Inventory';
@@ -9,9 +9,24 @@ const Home = () => {
     const {inventories,setInventories} = useInventory();
     let showInventories = inventories.slice(0,6);
 
+    const [searchResult,setSearchResult] = useState([]);
+    const [searchErr,setSearchErr] = useState('');
     const { register, handleSubmit ,reset} = useForm();
+    let filterResult;
     const onSubmit = data => {
-        reset();
+        const filterItem = data.textOfInquiry.toLowerCase();
+        filterResult = inventories.filter(inventory => inventory.name.toLowerCase().includes(filterItem) || 
+                                                            inventory.category.toLowerCase().includes(filterItem) || 
+                                                            inventory.brand.toLowerCase().includes(filterItem) || 
+                                                            inventory.Model.toLowerCase().includes(filterItem));
+        if(filterResult.length === 0){
+            setSearchErr('No matched found!');
+            return;
+        }else{
+            setSearchResult(filterResult);
+            setSearchErr('');
+            reset();
+        }
     };
 
     return (
@@ -24,10 +39,21 @@ const Home = () => {
 
             </div>
             <div className="inventory mx-5 my-10">
-                {
+                {}
+                {   (searchErr) 
+                    ?
+                    <p>{searchErr}</p> 
+                    :
+                    (searchResult.length > 0) 
+                    ?
+                    searchResult.map(inventory=><Inventory key={inventory._id}
+                                            inventory={inventory}>
+                                           </Inventory>)
+                    :
                     showInventories.map(inventory=><Inventory key={inventory._id}
                                             inventory={inventory}>
                                             </Inventory>)
+
                 }
             </div>
         </div>
