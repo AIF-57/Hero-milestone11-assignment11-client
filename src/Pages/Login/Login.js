@@ -1,10 +1,10 @@
 import React from 'react';
 import loginImg from '../../utilities/form2.jpg'
 import { useForm } from "react-hook-form";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import googleLogo from '../../utilities/Google-logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,12 +16,20 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-      const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const [user3] = useAuthState(auth);
 
+    const navigate = useNavigate();
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        signInWithEmailAndPassword(data.email,data.password)
+        signInWithEmailAndPassword(data.email,data.password);
     };
+
+    if(user){
+        navigate(from,{replace:true})
+    }
     return (
         <div className='h-[80vh] grid grid-cols-2 items-center mx-5'>
             <img src={loginImg} alt="" />
