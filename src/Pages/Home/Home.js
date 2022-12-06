@@ -42,7 +42,7 @@ const Home = () => {
                 {}
                 {   (searchErr) 
                     ?
-                    <p>{searchErr}</p> 
+                    <p className='text-red-500 font-semibold text-xl border-b-2 border-red-500 border-dotted inline-block '>{searchErr}</p> 
                     :
                     (searchResult.length > 0) 
                     ?
