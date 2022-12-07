@@ -25,7 +25,7 @@ const AddNewItem = () => {
     return (
         <div className='py-5'>
             <p className='text-lg font-semibold'>Add Item</p>
-            <div className="addProduct w-2/3 mx-auto h-screen flex flex-col justify-center">
+            <div className="addProduct lg:w-2/3 mx-auto h-screen flex flex-col justify-center">
             <form onSubmit={handleSubmit(onSubmit)} className='mx-auto py-10 rounded border shadow-2xl w-4/5 flex flex-col items-center'>
                 <input defaultValue={userEmail} className='hidden w-4/6 px-2 outline-none text-sm h-8 border-b-2 border-white rounded' {...register("email", { required: true})} />
                 <input placeholder='product name' className='w-4/6 px-2 outline-none text-sm h-10 border-2 border-gray-600 rounded' {...register("name", { required: true})} />

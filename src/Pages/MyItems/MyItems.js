@@ -40,7 +40,7 @@ const MyItems = () => {
         <div>
             <div className="itemsDetail min-h-screen">
                 <p className='font-semibold my-8'>My Items: <span className='text-gray-500 font-extrabold text-lg'>{myItems.length }</span></p>
-                <div className="itemContainer grid grid-cols-3 p-5 gap-x-5">
+                <div className="itemContainer grid grid-cols-1 lg:grid-cols-3 p-5 gap-x-5">
                     {
                         myItems.map(myItem => <Item
                             key={myItem._id}

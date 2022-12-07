@@ -16,8 +16,8 @@ const Inventory = ({inventory}) => {
         };
     };
     return (
-            <div className="itemDetail border rounded-md grid grid-cols-9 my-2 items-center">
-                <img src={inventory.image} alt="Item" width='100'/>
+            <div className="itemDetail border rounded-md grid grid-cols-3 lg:grid-cols-9 gap-y-5 lg:gap-y-0 my-5 lg:my-2 py-5 lg:py-0 items-center">
+                <img src={inventory.image} alt="Item" width='100' className='mx-auto col-span-3 lg:col-auto'/>
                 <p className='col-span-3'>{inventory.name}</p>
                 <div className="category">
                     <p className='text-sm font-semibold'>Category</p>
@@ -27,7 +27,7 @@ const Inventory = ({inventory}) => {
                     <p className='text-sm font-semibold'>Brand</p>
                     <p>{inventory.brand}</p>
                 </div>
-                <div className="price">
+                <div className="price hidden lg:block">
                     <p className='text-sm font-semibold'>Price</p>
                     <p>{inventory.Price}</p>
                 </div>
@@ -37,9 +37,9 @@ const Inventory = ({inventory}) => {
                 </div>
                 {
                     (user?.emailVerified) ?
-                    <Link to={`/inventory/${inventory._id}`}><FontAwesomeIcon icon={faPenToSquare} className='text-2xl text-orange-500'></FontAwesomeIcon></Link>
+                    <Link to={`/inventory/${inventory._id}`} className='col-span-3 lg:col-auto'><FontAwesomeIcon icon={faPenToSquare} className='text-2xl text-orange-500'></FontAwesomeIcon></Link>
                     :
-                    <button onClick={reminderBtn}><FontAwesomeIcon icon={faPenToSquare} className='text-2xl text-orange-500'></FontAwesomeIcon></button>
+                    <button onClick={reminderBtn} className='col-span-3 lg:col-auto'><FontAwesomeIcon icon={faPenToSquare} className='text-2xl text-orange-500'></FontAwesomeIcon></button>
                 }
             </div>
     );

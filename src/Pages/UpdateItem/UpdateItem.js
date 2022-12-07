@@ -83,17 +83,17 @@ const UpdateItem = () => {
 
     return (
         <div>
-            <div className="my-10 h-screen updateDetail grid grid-cols-5 items-center mx-5 gap-x-5">
-                <div className="itemImg col-span-2">
+            <div className="my-10 h-screen updateDetail grid lg:grid-cols-5 items-center mx-5 gap-x-5">
+                <div className="itemImg lg:col-span-2">
                     <img src={detail.image} alt="Item_Image" width='400'/>
                 </div>
-                <div className="additionalInfo col-span-3 text-left text-sm font-semibold">
+                <div className="additionalInfo lg:col-span-3 text-left text-sm font-semibold">
                     <p className='font-semibold text-xl text-blue-700'>{detail.name}</p>
                     <div className="model my-5">
                         <p>Model: <span className='text-[16px] font-normal'>{detail.Model}</span></p>
                         <p>Price: <span className='text-[16px] font-normal'>{detail.Price}</span></p>
                     </div>
-                    <div className="manageQuantities grid grid-cols-3 gap-5 items-center">
+                    <div className="manageQuantities grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-5 items-center">
                         <div className='col-span-2'>
                             <div className="delivered grid grid-cols-3 items-center">
                                 <p>Quantity:</p>
@@ -113,7 +113,7 @@ const UpdateItem = () => {
                                 </form>
                             </div>
                         </div>
-                        <button onClick={()=>deleteItem(id)} className='ml-auto mr-5 bg-red-300 w-10 h-10 text-red-600 text-lg rounded-full'><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></button>
+                        <button onClick={()=>deleteItem(id)} className='ml-auto lg:mr-5 bg-red-300 w-full lg:w-10 h-10 text-red-600 text-lg rounded-full'><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></button>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,10 @@
 import React from 'react';
+import Footer from '../Shared/Footer/Footer';
 
 const Blogs = () => {
     return (
-        <div className='my-10'>
-            <div className="blogContainer m-5 flex flex-col items-center">
+        <div>
+            <div className="min-h-screen my-10 blogContainer m-5 flex flex-col items-center">
                 <div className="blog text-left w-[80%] my-5">
                     <p className='text-2xl font-semibold my-2'>Difference between Node.JS and Javascript</p>
                     <div className='content flex '>
@@ -78,6 +79,7 @@ const Blogs = () => {
                 </div>
 
             </div>
+            <Footer></Footer>
         </div>
     );
 };
