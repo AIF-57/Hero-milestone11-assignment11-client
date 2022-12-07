@@ -2,7 +2,7 @@
 # Hardware
 
 
-https://chartered-accountant-aif.web.app/
+https://hardware-40f70.web.app/
 ## Features
 
 - The site is for the purpose of managing inventories like PC components
