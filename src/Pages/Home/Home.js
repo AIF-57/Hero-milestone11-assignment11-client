@@ -8,7 +8,7 @@ import './Home.css'
 
 
 const Home = () => {
-    const {inventories,setInventories} = useInventory();
+    const {inventories} = useInventory();
     let showInventories = inventories.slice(0,6);
 
     const [searchResult,setSearchResult] = useState([]);

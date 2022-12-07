@@ -12,11 +12,9 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Login = () => {
     const [
         signInWithEmailAndPassword,
-        user,
-        loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-    const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, error2] = useSignInWithGoogle(auth);
     const [user3] = useAuthState(auth);
 
     const navigate = useNavigate();

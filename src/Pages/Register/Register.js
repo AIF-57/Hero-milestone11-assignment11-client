@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import registerImg from '../../utilities/form.jpg'
 import { useForm } from "react-hook-form";
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +12,6 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
     const [err,setErr] = useState('');
