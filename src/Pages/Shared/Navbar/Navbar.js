@@ -44,7 +44,7 @@ const Navbar = () => {
                         {
                             (!user) ? 
                             <>
-                                <Link to={'/login'}><button className='mx-4 border w-20 h-8 bg-blue-400 text-white rounded'>Login</button></Link>                    
+                                <Link to={'/login'}><button className='my-2 lg:my-0 mx-4 border w-20 h-8 bg-blue-400 text-white rounded'>Login</button></Link>                    
                                 <Link to={'/register'}><button className='mx-4 border w-20 h-8 bg-black text-white rounded'>Register</button></Link>
                             </>
                             :(!user.emailVerified)

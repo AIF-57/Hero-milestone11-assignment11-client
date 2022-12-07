@@ -9,7 +9,7 @@ const UpdateItem = () => {
 
 
     const [detail,setDetail] = useState({});
-    const url = `http://localhost:5000/item/${id}`;
+    const url = `https://harware.onrender.com/item/${id}`;
     fetch(url)
     .then(res=>res.json())
     .then(data=>{
@@ -26,7 +26,7 @@ const UpdateItem = () => {
         const typeofValue = isNaN(value);
         if (!typeofValue && value > 0) {
             const newQuantities = {quantity: remainingQuantities + value}
-            const url = `http://localhost:5000/update/${id}`
+            const url = `https://harware.onrender.com/update/${id}`
             fetch(url,{
                 method: 'PUT',
                 headers: {
@@ -49,7 +49,7 @@ const UpdateItem = () => {
         const delivered = 1;
         if (remainingQuantities > 0) {
             const newQuantities = {quantity: remainingQuantities - delivered};
-            const url = `http://localhost:5000/update/${id}`
+            const url = `https://harware.onrender.com/update/${id}`
             fetch(url,{
                 method: 'PUT',
                 headers: {
@@ -68,7 +68,7 @@ const UpdateItem = () => {
     const deleteItem = () =>{
         const confirm = window.confirm('Do you want to delete this item ?');
         if(confirm){
-            const url = `http://localhost:5000/delete/${id}`
+            const url = `https://harware.onrender.com/delete/${id}`
             fetch(url,{
                 method:'DELETE'
             })

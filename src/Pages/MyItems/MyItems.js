@@ -19,7 +19,7 @@ const MyItems = () => {
     const deleteItem = id =>{
         const confirm = window.confirm('Do you want to delete this item ?');
         if(confirm){
-            const url = `http://localhost:5000/delete/${id}`
+            const url = `https://harware.onrender.com/delete/${id}`
             fetch(url,{
                 method:'DELETE'
             })

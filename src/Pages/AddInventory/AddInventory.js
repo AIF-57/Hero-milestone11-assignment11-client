@@ -8,7 +8,7 @@ const AddNewItem = () => {
     const userEmail = user?.email
     const { register, handleSubmit ,reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/item',{
+        fetch('https://harware.onrender.com/item',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
